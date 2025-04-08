@@ -6,7 +6,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 ![REST API](https://img.shields.io/badge/REST%20API-005571?style=for-the-badge&logo=protocols&logoColor=white)
 
-> A backend service offering built with **Spring Boot** for managing payments in a Salon Booking System. This microservice handles service payment creation and getting via REST APIs.
+> A backend service offering built with **Spring Boot** for managing payments in a Salon Booking System. This microservice handles payments via REST APIs.
 
 ---
 
