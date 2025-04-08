@@ -13,7 +13,7 @@
 ## 🚀 Features
 
 - ✅ Create a payment (with stripe)
-- 🧑 Payment management (Update/Fetch user details)
+- 🧑 Payment management (Update/Fetch details)
 
 ---
 
