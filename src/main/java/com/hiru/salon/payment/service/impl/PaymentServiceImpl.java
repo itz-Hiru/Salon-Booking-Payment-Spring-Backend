@@ -1,6 +1,7 @@
 package com.hiru.salon.payment.service.impl;
 
 import com.hiru.salon.payment.domain.PaymentMethod;
+import com.hiru.salon.payment.domain.PaymentOrderStatus;
 import com.hiru.salon.payment.modal.PaymentOrder;
 import com.hiru.salon.payment.payload.dto.BookingDTO;
 import com.hiru.salon.payment.payload.dto.UserDTO;
@@ -86,5 +87,20 @@ public class PaymentServiceImpl implements PaymentService {
         Session session = Session.create(params);
 
         return session.getUrl();
+    }
+
+    @Override
+    public Boolean proceedPayment(PaymentOrder paymentOrder, String paymentId, String paymentLinkId) {
+        if (paymentOrder.getStatus() == PaymentOrderStatus.PENDING) {
+            paymentOrder.setStatus(PaymentOrderStatus.SUCCESS);
+            paymentRepository.save(paymentOrder);
+            return true;
+        } else if (paymentOrder.getStatus() == PaymentOrderStatus.SUCCESS) {
+            return true;
+        } else if (paymentOrder.getStatus() == PaymentOrderStatus.FAILED) {
+            return false;
+        }
+
+        return false;
     }
 }

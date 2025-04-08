@@ -22,4 +22,10 @@ public interface PaymentService  {
             Double amount,
             Long orderId
     ) throws StripeException;
+
+    Boolean proceedPayment(
+            PaymentOrder paymentOrder,
+            String paymentId,
+            String paymentLinkId
+    );
 }
